@@ -30,6 +30,54 @@ El formato sigue una estructura basada en versiones y categorías de cambios.
 
 ---
 
+## [1.2.0] - 2026-10-23
+
+### Added
+
+- Incorporación de un componente independiente `ThemeToggle` para alternar entre el modo oscuro y el modo claro.
+- Incorporación de un componente independiente `InstallPWAButton` para facilitar la instalación de la aplicación en dispositivos compatibles.
+- Ayuda contextual para usuarios de iOS con instrucciones para añadir la aplicación a la pantalla de inicio desde Safari.
+- Inclusión de estados accesibles y atributos descriptivos en los controles de interfaz.
+
+### Changed
+
+- Reorganización del diseño principal de la calculadora para mejorar la distribución del contenido y la alineación de sus columnas.
+- Centrado del contenedor principal mediante anchos máximos y márgenes automáticos.
+- Ajuste de los espacios horizontales y verticales del encabezado y del contenido principal.
+- Redistribución del espacio entre el formulario de configuración de precios y el panel lateral de resultados.
+- Adaptación del panel lateral mediante posicionamiento `sticky` en pantallas grandes para mantener visibles los resultados y productos guardados durante el desplazamiento.
+- Ajuste del diseño responsive para organizar los componentes en una sola columna en pantallas pequeñas y en dos columnas en pantallas grandes.
+- Actualización de los estilos de los controles de instalación y cambio de tema para mantener una interfaz visual consistente.
+- Refactorización del encabezado de la página principal para mejorar la presentación del logotipo, el eslogan y el título de la calculadora.
+- Consolidación de la estructura visual de la página mediante contenedores con espaciado y ancho máximo definidos.
+- Actualización del `RootLayout` para mantener integrados los metadatos SEO, los datos estructurados JSON-LD, el registro del Service Worker y el pie de página.
+- Restauración del script de inicialización del tema para aplicar la preferencia guardada antes del primer renderizado y reducir el parpadeo visual.
+- Actualización del título de la aplicación instalada en dispositivos Apple para utilizar el nombre definido en la configuración del sitio (`SITE.name`).
+- Organización de los componentes para separar la presentación visual de la lógica de cálculo y de las preferencias de interfaz.
+
+### Fixed
+
+- Corrección de la estructura del documento HTML para mantener el componente `Footer` dentro de `body`.
+- Corrección de la distribución visual que podía dejar el contenido principal descentrado en pantallas amplias.
+- Ajuste del ancho de las columnas para evitar que el panel lateral ocupe una proporción excesiva del espacio disponible.
+- Mejora del comportamiento del panel lateral durante el desplazamiento vertical.
+- Corrección de la ubicación de los controles de la aplicación para facilitar su alineación en el encabezado.
+- Recuperación de la integración de `JsonLd` y `ServiceWorkerRegister` en el diseño raíz.
+- Mejora del comportamiento del botón de instalación para ocultarse cuando la aplicación ya está instalada o cuando el navegador no ofrece un método de instalación compatible.
+
+### Removed
+
+- Eliminación de la dependencia directa de `ui.btnAccent` en el componente `InstallPWAButton`, sustituyéndola por clases de Tailwind CSS para mantener sus estilos dentro del propio componente.
+
+### Security
+
+- Conservación de la inicialización del tema mediante un script controlado que consulta la preferencia almacenada localmente.
+- Mantenimiento del manejo de errores al acceder a `localStorage` para evitar que las restricciones del navegador interrumpan la inicialización del tema.
+- Conservación del registro del Service Worker y de la configuración de metadatos SEO.
+- No se introdujeron servicios de almacenamiento remoto ni dependencias de backend como parte de estos cambios.
+
+---
+
 ## [1.1.0] - 2026-10-21
 
 ### Added
